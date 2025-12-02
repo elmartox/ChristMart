@@ -1,0 +1,283 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@400;600&display=swap');
+
+/**
+ * ========================================
+ * PALETA DE COLORES CHRISTMART
+ * ========================================
+ */
+:root {
+    --hero-green-top: #0d853f;     /* Verde Claro/Principal */
+    --hero-green-bottom: #0a5c2d;  /* Verde Oscuro/Fondo/Énfasis */
+    --footer-red: #cc2f2f;         /* Rojo de Énfasis/Acción (Salir, Delete) */
+    --dark-bg: #2e3035;            /* Fondo para Navbar/Menú */
+    --light-text: #ffffff;
+    --subtle-gray: #f8f9fa;        /* Fondo claro */
+    --card-shadow-light: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* GENERAL */
+body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    /* Fondo limpio y sutil */
+    background: linear-gradient(135deg, var(--subtle-gray) 0%, #e0e0e0 100%);
+    color: #333;
+    min-height: 100vh;
+    padding-bottom: 50px; /* Espacio para el footer */
+}
+
+/* ====================== NAVBAR (Ajustado a Variables) ====================== */
+.navbar {
+    background-color: var(--dark-bg); /* Fondo oscuro consistente */
+    padding: 0.5rem 1.5rem !important; /* Compacto, como solicitaste */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar-brand {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.6rem; 
+    color: var(--light-text);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.nav-link {
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    color: var(--light-text);
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    padding: 0.4rem 0.8rem !important;
+    border-radius: 6px;
+}
+
+.nav-link:hover {
+    color: var(--light-text);
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.nav-link.active {
+    background-color: var(--hero-green-bottom);
+    color: white;
+    font-weight: 700;
+}
+
+/* ====================== TRIVIA FORMULARIO PROFESIONAL ====================== */
+
+.trivia-container {
+    max-width: 800px;
+    margin: 40px auto;
+    background: white;
+    padding: 3rem;
+    border-radius: 20px;
+    box-shadow: var(--card-shadow-light); /* Sombra suave */
+    border-top: 5px solid var(--hero-green-top); /* Borde de énfasis */
+}
+
+.trivia-container h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--hero-green-bottom); /* Título principal en verde oscuro */
+    text-align: center;
+    margin-bottom: 2.5rem;
+    padding-bottom: 15px;
+    border-bottom: 2px solid #eee;
+}
+
+/* Estilo para cada pregunta */
+.question {
+    background: var(--subtle-gray);
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    border-radius: 12px;
+    border: 1px solid #ddd;
+    transition: box-shadow 0.3s;
+}
+
+.question:hover {
+    box-shadow: 0 5px 15px rgba(13, 133, 63, 0.1);
+}
+
+.question p {
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: #444;
+    margin-bottom: 1rem;
+    line-height: 1.5;
+}
+
+/* Estilo para las opciones de radio */
+.question input[type="radio"] {
+    margin-right: 10px;
+    /* Estilo básico de radio button para que no se vea feo */
+    transform: scale(1.1); 
+    accent-color: var(--hero-green-top); /* Color de énfasis para la selección */
+}
+
+/* Estilo para el texto de la opción */
+.question br {
+    display: none; /* Eliminar los <br> que hacen saltos de línea innesesarios */
+}
+
+.question label {
+    display: block; /* Cada opción en su propia línea */
+    margin-bottom: 8px;
+    padding: 5px 0;
+    cursor: pointer;
+}
+
+/* Botón de envío (Usamos el botón de Bootstrap pero lo personalizamos) */
+.btn-success {
+    background-color: var(--hero-green-top);
+    border: none;
+    color: white;
+    font-weight: 700;
+    padding: 10px 30px;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    display: block;
+    width: 100%;
+    margin-top: 2rem;
+}
+
+.btn-success:hover {
+    background-color: var(--hero-green-bottom);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(13, 133, 63, 0.4);
+}
+
+/* ====================== PÁGINA DE RESULTADOS (NUEVO) ====================== */
+
+.result-card {
+    max-width: 550px;
+    margin: 80px auto; /* Centrado vertical y horizontalmente */
+    padding: 3rem;
+    background: linear-gradient(145deg, white, var(--subtle-gray));
+    border-radius: 25px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+    border: 3px solid var(--hero-green-top); /* Borde más grueso para celebrar */
+    text-align: center;
+    animation: fadeIn 0.8s ease-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.result-card h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.8rem;
+    font-weight: 700;
+    color: var(--hero-green-bottom);
+    margin-bottom: 1.5rem;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilo para el puntaje */
+.result-card .score-display {
+    font-family: 'Inter', sans-serif;
+    font-size: 3rem;
+    font-weight: 900;
+    color: var(--footer-red); /* Usamos el rojo para el énfasis del resultado */
+    margin: 1.5rem 0;
+    padding: 10px 0;
+    border-top: 1px dashed #ccc;
+    border-bottom: 1px dashed #ccc;
+    display: inline-block;
+}
+
+.result-card .score-display strong {
+    font-size: 4.5rem;
+    display: block;
+    color: var(--hero-green-top); /* El número principal en verde vibrante */
+}
+
+/* Estilo para el texto de intentos */
+.result-card p {
+    font-size: 1.1rem;
+    color: #666;
+    margin-bottom: 0.5rem;
+}
+
+/* Botón de volver al menú (usamos el color principal de ChristMart) */
+.result-card .btn-primary {
+    background-color: var(--hero-green-bottom);
+    border-color: var(--hero-green-bottom);
+    font-weight: 600;
+    padding: 10px 30px;
+    border-radius: 50px;
+    margin-top: 2rem;
+    transition: all 0.3s ease;
+}
+
+.result-card .btn-primary:hover {
+    background-color: var(--hero-green-top);
+    border-color: var(--hero-green-top);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+
+/* ====================== FOOTER (Ajustado a Variables) ====================== */
+.footer {
+    background-color: var(--footer-red);
+    color: white;
+    text-align: center;
+    padding: 18px;
+    margin-top: 50px;
+}
+
+/* ====================== RESPONSIVE ====================== */
+@media (max-width: 768px) {
+    .trivia-container {
+        padding: 1.5rem;
+        margin: 20px auto;
+        border-radius: 12px;
+    }
+    
+    .trivia-container h1 {
+        font-size: 2rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .question {
+        padding: 1rem;
+    }
+    
+    .question p {
+        font-size: 1.05rem;
+    }
+    
+    .btn-success {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
+    
+    /* Responsive de la tarjeta de resultados */
+    .result-card {
+        margin: 40px 15px;
+        padding: 2rem;
+    }
+    
+    .result-card h1 {
+        font-size: 2.2rem;
+    }
+    
+    .result-card .score-display strong {
+        font-size: 3.5rem;
+    }
+    
+    .result-card .score-display {
+        font-size: 2rem;
+    }
+}

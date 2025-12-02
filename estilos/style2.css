@@ -1,0 +1,101 @@
+@charset "UTF-8";
+
+/* GENERAL */
+body {
+    font-family: 'Inter', sans-serif;
+}
+
+/* HERO */
+
+.navbar-brand,
+.nav-link {
+    font-family: 'Inter', sans-serif !important;
+    font-weight: 600;
+}
+.nav-link:hover {
+    background-color: rgba(0, 0, 0, 0.06);
+}
+
+.nav-link.active {
+    background-color: #0a5c2d;
+    color: white !important;
+    font-weight: 600;
+}
+
+.natividad-hero {
+    height: 45vh;
+    background: linear-gradient(135deg, #0d853f, #0a5c2d);
+    padding-top: 120px;
+    color: white;
+}
+
+.natividad-hero .hero-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem;
+    font-weight: 700;
+}
+
+.natividad-hero .hero-subtitle {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.2rem;
+    opacity: 0.9;
+}
+
+/* TITULOS */
+.section-title {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    color: #0a5c2d;
+}
+
+/* INFO */
+.info-section p {
+    font-size: 1.05rem;
+    line-height: 1.7;
+}
+
+/* CARDS */
+.info-card {
+    padding: 25px;
+    background: white;
+    border-radius: 14px;
+    transition: 0.3s;
+}
+
+.info-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 22px rgba(0,0,0,0.15);
+}
+
+/* CARROUSEL */
+.carousel img {
+    height: 380px;
+    object-fit: cover;
+}
+
+/* FOOTER (idéntico para mantener identidad) */
+.footer {
+    background-color: #cc2f2f;
+    color: white;
+    text-align: center;
+    padding: 18px;
+    margin-top: 50px;
+}
+.spotify-container {
+    max-width: 850px;
+    margin: 0 auto;
+    padding: 10px;
+}
+
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .natividad-hero {
+        height: 35vh;
+        padding-top: 140px;
+    }
+
+    .natividad-hero .hero-title {
+        font-size: 2.2rem;
+    }
+}

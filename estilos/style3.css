@@ -1,0 +1,100 @@
+@charset "UTF-8";
+
+/* Tipografías globales */
+body {
+    font-family: 'Inter', sans-serif !important;
+}
+
+/* NAVBAR */
+.navbar-brand,
+.nav-link {
+    font-family: 'Inter', sans-serif !important;
+    font-weight: 600;
+}
+
+.nav-link:hover {
+    background-color: rgba(0, 0, 0, 0.06);
+}
+
+/* --- ESTILO ACTIVO (MISMO QUE style2.css) --- */
+.nav-link.active {
+    background-color: #0a5c2d !important; /* verde */
+    color: #ffffff !important;
+    font-weight: 600 !important;
+    border-radius: 6px;
+    padding: 8px 14px !important;
+    transition: 0.3s ease;
+}
+
+/* HERO */
+.page-hero {
+    background: linear-gradient(135deg, #0d853f, #0a5c2d);
+    padding: 140px 0 90px;
+    color: #ffffff;
+    text-align: center; /* más consistente si tu hero es centrado */
+}
+
+.hero-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem;
+}
+
+.hero-subtitle {
+    font-size: 1.2rem;
+    opacity: 0.9;
+}
+
+/* TARJETAS */
+.experiencias-section {
+    padding: 60px 0;
+}
+
+.exp-card {
+    position: relative;
+    border-radius: 18px;
+    overflow: hidden;
+    height: 330px;
+}
+
+.exp-bg {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    filter: blur(6px) brightness(0.7);
+    transform: scale(1.1);
+}
+
+.exp-content {
+    position: relative;
+    z-index: 2;
+    height: 100%;
+    color: white;
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.exp-content h3 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+}
+
+.exp-btn {
+    background-color: #ffffff;
+    color: #0a5c2d;
+    font-weight: 600;
+    border-radius: 10px;
+}
+
+.exp-btn:hover {
+    background-color: #e6f5ec;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .page-hero {
+        padding: 110px 0 60px;
+    }
+}

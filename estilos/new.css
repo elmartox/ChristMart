@@ -1,0 +1,326 @@
+@charset "UTF-8";
+/**
+ * ========================================
+ * PALETA DE COLORES Y FUENTES
+ * ========================================
+ */
+:root {
+    --hero-green-top: #0d853f;
+    --hero-green-bottom: #0a5c2d;
+    --footer-red: #cc2f2f;
+    --dark-bg: #2e3035; 
+    --light-text: #ffffff;
+    --subtle-gray: #ccc;
+}
+
+body {
+    background-color: #f4f4f9; 
+    font-family: 'Inter', sans-serif; 
+    margin: 0;
+    padding: 0;
+}
+
+
+/**
+ * ========================================
+ * 1. Estilos Base y Desktop (≥ 992px)
+ * ========================================
+ */
+
+.navbar {
+    background-color: var(--dark-bg); 
+    padding: 0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    min-height: 60px; 
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch; 
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.logo {
+    color: var(--light-text);
+    font-size: 1.4em;
+    font-weight: 700;
+    text-decoration: none;
+    display: flex;
+    align-items: center; 
+}
+
+/* --- Estilos de la Zona Derecha (Bienvenida y Logout) --- */
+.nav-right {
+    display: flex;
+    align-items: stretch;
+    position: relative; /* Necesario para que el menú se posicione correctamente en responsive */
+}
+
+/* Estilo de Bienvenida en Desktop */
+.welcome {
+    color: var(--subtle-gray);
+    display: flex;
+    align-items: center;
+    padding-right: 20px;
+    font-size: 0.95em;
+    border-right: 1px solid rgba(255, 255, 255, 0.1); 
+}
+
+.welcome strong {
+    color: var(--light-text);
+    font-weight: 600;
+    margin-left: 5px;
+}
+
+.btn-logout {
+    color: var(--footer-red); 
+    text-decoration: none;
+    font-weight: 500;
+    padding: 0 15px;
+    display: flex;
+    align-items: center;
+    transition: background-color 0.2s;
+}
+
+.btn-logout:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Ocultamos la hamburguesa por defecto */
+.hamburger {
+    display: none; 
+}
+
+/* --- Estilos del Menú Dinámico Desktop --- */
+.dynamic-menu-wrapper {
+    height: 100%;
+}
+.dynamic-menu > ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex; /* Horizontal en desktop */
+    height: 100%;
+}
+
+.dynamic-menu > ul > li {
+    position: relative;
+    margin: 0;
+    padding: 0 15px;
+    display: flex;
+    align-items: center;
+    transition: background-color 0.3s;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+}
+
+.dynamic-menu > ul > li > a {
+    color: var(--subtle-gray);
+    text-decoration: none;
+    padding: 20px 0; 
+    display: block;
+    font-weight: inherit;
+    transition: color 0.2s;
+}
+
+.dynamic-menu > ul > li:hover {
+    background-color: rgba(255, 255, 255, 0.1); 
+}
+
+.dynamic-menu > ul > li:hover > a {
+    color: var(--light-text);
+}
+
+/* Líneas de Color Superiores */
+.dynamic-menu > ul > li:nth-child(1) { border-top: 5px solid var(--hero-green-top); }
+.dynamic-menu > ul > li:nth-child(2) { border-top: 5px solid var(--hero-green-bottom); }
+.dynamic-menu > ul > li:nth-child(3) { border-top: 5px solid var(--footer-red); }
+.dynamic-menu > ul > li:nth-child(4) { border-top: 5px solid var(--hero-green-top); }
+
+/* Indicador de submenú (flecha) */
+.dynamic-menu > ul > li.has-submenu > a::after,
+.dynamic-menu > ul > li:nth-child(3) > a::after {
+    content: '\25BE'; 
+    font-size: 0.7em;
+    margin-left: 5px;
+    vertical-align: top;
+    line-height: 1.5;
+}
+
+/* --- Estilos del Dropdown Desktop --- */
+.dynamic-menu > ul > li > ul {
+    /* ... estilos de dropdown ... */
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    min-width: 200px;
+    z-index: 20;
+    background: linear-gradient(180deg, var(--hero-green-top) 0%, var(--hero-green-bottom) 100%); 
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+    border-radius: 0 0 4px 4px;
+    overflow: hidden;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.dynamic-menu > ul > li:hover > ul {
+    display: block;
+}
+
+.dynamic-menu > ul > li > ul > li {
+    /* ... estilos de sub-ítem ... */
+    padding: 0;
+    margin: 0;
+    border-top: none !important; 
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15); 
+    background-color: transparent !important; 
+    font-weight: 400; 
+}
+
+.dynamic-menu > ul > li > ul > li > a {
+    color: var(--light-text); 
+    padding: 12px 18px;
+    display: block;
+    text-decoration: none;
+    font-weight: inherit;
+    transition: background-color 0.2s;
+}
+
+.dynamic-menu > ul > li > ul > li > a:hover {
+    background-color: rgba(0, 0, 0, 0.2); 
+    font-weight: 500;
+}
+
+/* --- Estilos de la Sección de Contenido Principal --- */
+.dashboard-content {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.welcome-card h1 {
+    font-family: 'Playfair Display', serif;
+    color: var(--hero-green-bottom);
+}
+
+
+/**
+ * ========================================
+ * 5. Media Queries para Responsive (Móviles y Tablets)
+ * ========================================
+ * Se activan cuando la pantalla es menor a 991px
+ */
+
+@media (max-width: 991px) {
+    
+    /* Ocultar elementos de desktop */
+    .welcome {
+        display: none; /* Ocultamos la versión horizontal del saludo */
+        border-right: none;
+        padding-right: 0;
+    }
+    
+    .dynamic-menu-wrapper {
+        display: none; /* Ocultamos el menú horizontal */
+        position: absolute; /* Preparamos la posición absoluta para el despliegue */
+        top: 60px;
+        z-index: 15;
+        width: 250px;
+        background-color: var(--dark-bg);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+        border-radius: 4px; 
+    }
+    
+    /* Mostrar el ícono de la hamburguesa */
+    .hamburger {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        width: 30px;
+        height: 25px;
+        cursor: pointer;
+        margin-left: 20px;
+    }
+
+    .hamburger span {
+        display: block;
+        width: 100%;
+        height: 3px;
+        background-color: var(--light-text);
+        border-radius: 1px;
+        transition: all 0.3s ease-in-out;
+    }
+    
+    /* --- Contenedor del menú activado (La corrección para centrar va aquí) --- */
+    .dynamic-menu-wrapper.active {
+        display: block;
+        
+        /* === CORRECCIÓN DE CENTRADO === */
+        left: 50%;
+        transform: translateX(-50%);
+        /* ============================ */
+    }
+
+    /* --- Saludo de Bienvenida dentro del menú (Requiere mover el <span> al JSP) --- */
+    /* Este estilo solo funciona si el <span>.welcome está dentro de .dynamic-menu-wrapper */
+    .dynamic-menu-wrapper.active .welcome {
+        display: block !important; 
+        color: var(--subtle-gray);
+        padding: 15px;
+        font-size: 1em;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        text-align: center; /* Centrar texto dentro del menú */
+    }
+
+    .dynamic-menu-wrapper.active .welcome strong {
+        color: var(--light-text);
+        font-weight: 700;
+        margin-left: 0;
+        display: block; /* Mover el nombre a una línea aparte si es muy largo */
+    }
+
+    /* --- Estilos de la Lista Vertical --- */
+    .dynamic-menu > ul {
+        flex-direction: column; 
+        width: 100%;
+    }
+
+    .dynamic-menu-wrapper.active > .dynamic-menu > ul > li {
+        width: 100%;
+        border-top: none !important; /* Quitar las líneas de color superior */
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        padding: 0;
+    }
+    
+    .dynamic-menu-wrapper.active > .dynamic-menu > ul > li > a {
+        padding: 12px 15px;
+        width: 100%;
+    }
+    
+    /* El enlace de cerrar sesión (fuera del dynamic-menu-wrapper) */
+    .btn-logout {
+        justify-content: center; /* Centrar el texto en el botón */
+        width: 100%; /* Ocupar todo el ancho disponible */
+        font-size: 1.1em;
+    }
+
+    /* --- Submenú en Móvil --- */
+    .dynamic-menu-wrapper.active .dynamic-menu > ul > li > ul {
+        position: static; 
+        display: none;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.15); /* Fondo más oscuro para sub-ítems */
+        box-shadow: none;
+        border-radius: 0;
+    }
+
+    .dynamic-menu-wrapper.active .dynamic-menu > ul > li > ul > li > a {
+        padding-left: 30px; 
+    }
+
+}

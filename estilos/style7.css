@@ -1,0 +1,209 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@400;600&display=swap');
+
+/* GENERAL */
+body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e8f5e8 100%);  /* Fondo similar al de login */
+    color: #333;
+    min-height: 100vh;
+}
+
+/* MENÚ */
+.navbar {
+    background-color: #0f4c3a;
+    padding: 1rem 2rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.navbar-brand {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    color: #fff;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 20px;
+}
+
+.nav-link {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.1rem;
+    color: #fff;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.nav-link:hover {
+    color: #d4a373;
+    background-color: rgba(0, 0, 0, 0.1);
+    padding: 5px 10px;
+    border-radius: 8px;
+}
+
+.nav-link.active {
+    background-color: #0a5c2d;
+    color: white;
+    font-weight: 700;
+}
+
+/* HERO */
+.natividad-hero {
+    height: 45vh;
+    background: linear-gradient(135deg, #0d853f, #0a5c2d);
+    padding-top: 120px;
+    color: white;
+    text-align: center;
+}
+
+.natividad-hero .hero-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem;
+    font-weight: 700;
+}
+
+.natividad-hero .hero-subtitle {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.2rem;
+    opacity: 0.9;
+}
+
+/* TÍTULOS */
+.section-title {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    color: #0a5c2d;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+/* INFO */
+.info-section p {
+    font-size: 1.05rem;
+    line-height: 1.7;
+}
+
+/* JUEGO */
+.game-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh;
+    padding: 2rem;
+}
+
+.game-card {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 2.5rem;
+    border-radius: 30px;
+    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.4);
+    text-align: center;
+    max-width: 900px;
+    width: 100%;
+    backdrop-filter: blur(10px);
+    border: 3px solid #0f4c3a;
+}
+
+.subtitle {
+    font-size: 1.4rem;
+    color: #d4a373;
+    margin-bottom: 2rem;
+    font-weight: bold;
+}
+
+#juego {
+    position: relative;
+    width: 100%;
+    height: 70vh;
+    min-height: 500px;
+    max-height: 700px;
+    margin: 2rem auto;
+    background: url('../imgs/nat6.jpg') center/cover no-repeat;
+    border-radius: 24px;
+    overflow: hidden;
+    cursor: crosshair;
+    border: 8px solid #0f4c3a;
+    box-shadow: inset 0 0 60px rgba(0, 0, 0, 0.5), 0 20px 40px rgba(0, 0, 0, 0.6);
+}
+
+.personaje {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    transform: translate(-50%, -50%);
+    opacity: 0.4;
+    filter: brightness(1.8) drop-shadow(0 0 15px gold);
+    transition: all 0.6s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+    pointer-events: auto;
+    z-index: 10;
+    user-select: none;
+}
+
+.personaje:hover {
+    opacity: 0.7;
+    filter: brightness(2.2) drop-shadow(0 0 25px #ffd700);
+    transform: translate(-50%, -50%) scale(1.1);
+}
+
+.personaje.encontrado {
+    opacity: 1 !important;
+    filter: brightness(1) drop-shadow(0 0 40px gold) !important;
+    transform: translate(-50%, -50%) scale(2.2) !important;
+    animation: celebrar 1.5s ease-in-out infinite;
+    z-index: 100;
+}
+
+@keyframes celebrar {
+    0%, 100% { transform: translate(-50%, -50%) scale(2.2) rotate(-8deg); }
+    50% { transform: translate(-50%, -50%) scale(2.4) rotate(8deg); }
+}
+
+#mensaje {
+    font-size: 1.8rem;
+    margin: 1rem 0;
+    color: #0f4c3a;
+    font-weight: bold;
+}
+
+#puntos {
+    font-size: 2rem;
+    color: #d4a373;
+    text-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* FOOTER */
+.footer {
+    background-color: #cc2f2f;
+    color: white;
+    text-align: center;
+    padding: 18px;
+    margin-top: 50px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .natividad-hero {
+        height: 35vh;
+        padding-top: 140px;
+    }
+
+    .natividad-hero .hero-title {
+        font-size: 2.2rem;
+    }
+
+    .game-card {
+        padding: 1.5rem;
+    }
+
+    .subtitle {
+        font-size: 1.2rem;
+    }
+}

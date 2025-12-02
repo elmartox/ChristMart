@@ -1,0 +1,98 @@
+@charset "UTF-8";
+
+/* ... (Estilos Base, H1, Body, etc., se mantienen) ... */
+* { margin:0; padding:0; box-sizing:border-box; }
+body {
+    font-family: 'Inter', sans-serif;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e8f5e8 100%);
+    min-height: 100vh;
+    color: #333;
+}
+h1, .logo { font-family: 'Playfair Display', serif; color: #0f4c3a; }
+
+/* NAVBAR COMÚN */
+.navbar {
+    background: white;
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    padding: 1rem 0; /* Esto define la altura: 1rem arriba + contenido + 1rem abajo */
+}
+.navbar .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.logo { font-size: 2rem; font-weight: 700; text-decoration: none; }
+.nav-links, .user-menu {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+}
+.nav-links a, .user-menu a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    transition: color .3s;
+}
+.nav-links a:hover, .user-menu a:hover { color: #0f4c3a; }
+.btn-acceder, .btn-logout {
+    background: #0f4c3a;
+    color: white !important;
+    padding: 0.7rem 1.6rem;
+    border-radius: 50px;
+    font-weight: 600;
+}
+.hamburger { display: none; font-size: 1.8rem; cursor: pointer; color: #0f4c3a; }
+
+/* 🚀 Responsive Navbar (Corregido) 🚀 */
+@media (max-width: 768px) {
+    /* Muestra el icono de la hamburguesa */
+    .hamburger { 
+        display: block; 
+    }
+
+    /* Estilos del menú desplegable */
+    .nav-links, .user-menu { 
+        position: fixed; 
+        /* Calculamos el 'top' para que empiece justo debajo del navbar (aprox. 3.5rem + altura de línea) */
+        top: 65px; 
+        left: 0; 
+        right: 0;
+        background: white; 
+        flex-direction: column;
+        padding: 2rem 0; /* Ajusta el padding vertical */
+        gap: 1.5rem;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        
+        /* Oculto por defecto */
+        transform: translateY(-100%); 
+        opacity: 0; 
+        visibility: hidden;
+        transition: all .4s ease;
+    }
+
+    /* Muestra el menú cuando la clase 'active' está presente */
+    .nav-links.active, .user-menu.active {
+        transform: translateY(0); /* Lo desliza hacia abajo */
+        opacity: 1; 
+        visibility: visible;
+    }
+    
+    /* Asegurar que los enlaces individuales dentro del menú ocupen todo el ancho */
+    .nav-links a {
+        padding: 0.5rem 2rem; /* Agrega padding para que sea más fácil hacer clic */
+        width: 100%;
+        text-align: center;
+        border-bottom: 1px solid #f0f0f0;
+    }
+
+    /* Eliminar el borde inferior del último enlace para una apariencia más limpia */
+    .nav-links a:last-child {
+        border-bottom: none;
+    }
+}

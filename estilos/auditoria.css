@@ -1,0 +1,137 @@
+@charset "UTF-8";
+/**
+ * =============================================
+ * PALETA DE COLORES CHRISTMART AUDITORÍA
+ * (Tomada del menú principal)
+ * =============================================
+ */
+:root {
+    --hero-green-top: #0d853f;     /* Verde Claro/Principal */
+    --hero-green-bottom: #0a5c2d;  /* Verde Oscuro/Fondo */
+    --footer-red: #800040128064/* Rojo de Énfasis/Advertencia */
+    --dark-bg: #2e3035;            /* Fondo General Oscuro */
+    --light-text: #ffffff;
+    --subtle-gray: #ccc;
+    --card-bg-light: #f7f7f7;      /* Fondo de tarjeta más claro */
+}
+
+/* ============================================= */
+/* CHRISTMART 2025 - ESTILOS AUDITORÍA           */
+/* ============================================= */
+
+/* Fondo general: Usamos el verde de énfasis sobre un fondo oscuro para mantener la consistencia */
+body {
+    background-color: var(--dark-bg); /* Fondo oscuro principal */
+    color: var(--light-text);
+    font-family: 'Inter', sans-serif; /* Usamos la fuente principal del proyecto */
+    min-height: 100vh;
+    padding: 2rem 0;
+}
+
+/* Títulos */
+.titulo-auditoria {
+    font-family: 'Playfair Display', serif;
+    color: var(--hero-green-top); /* Título principal en verde */
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+    letter-spacing: 1px;
+}
+
+.subtitulo-auditoria {
+    color: var(--subtle-gray);
+    font-weight: 400;
+    letter-spacing: 0.5px;
+}
+
+/* Tarjeta principal (Mantenemos un fondo casi blanco para que el contenido resalte) */
+.card-auditoria {
+    background: rgba(255, 255, 255, 0.98);
+    color: #333; /* Texto oscuro dentro de la tarjeta */
+    border-radius: 12px; /* Redondeamos un poco más */
+    box-shadow: 0 15px 30px rgba(0,0,0,0.5);
+    overflow: hidden;
+    margin-bottom: 2rem;
+}
+
+.card-header-auditoria {
+    /* Usamos un gradiente de los verdes de la paleta */
+    background: linear-gradient(135deg, var(--hero-green-top), var(--hero-green-bottom));
+    color: var(--light-text);
+    padding: 1.5rem;
+    text-align: center;
+}
+
+.card-header-auditoria h2 {
+    margin: 0;
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+/* Tabla */
+.table-auditoria th {
+    /* Fondo de la cabecera de la tabla en el verde oscuro */
+    background: var(--hero-green-bottom) !important;
+    color: white !important;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+    padding: 1rem !important;
+}
+
+.table-auditoria td {
+    vertical-align: middle;
+    padding: 0.8rem 1rem !important;
+    font-size: 0.95rem;
+}
+
+/* JSON bonito */
+.json-container {
+    background: #1e1e1e;
+    color: #4CAF50; /* Resaltamos el código JSON con un verde vibrante */
+    padding: 12px;
+    border-radius: 8px;
+    font-family: 'Consolas', 'Courier New', monospace;
+    font-size: 0.88rem;
+    max-height: 200px;
+    overflow-y: auto;
+    border: 1px solid #444;
+    line-height: 1.5;
+}
+
+/* Colores de operación (Badges) */
+.badge-insert { background: var(--hero-green-top); color: white; padding: 0.4rem 0.8rem; border-radius: 50px; font-weight: bold; }
+.badge-update { background: #ffc107; color: black; padding: 0.4rem 0.8rem; border-radius: 50px; font-weight: bold; } /* Amarillo estándar para Update */
+.badge-delete { background: var(--footer-red); color: white; padding: 0.4rem 0.8rem; border-radius: 50px; font-weight: bold; }
+
+/* Botón volver */
+.btn-volver {
+    /* Botón destacado con color de énfasis (Rojo) */
+    background: var(--footer-red);
+    color: var(--light-text);
+    font-weight: bold;
+    padding: 12px 40px;
+    border: none;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.btn-volver:hover {
+    background: rgb(96, 175, 7); /* Un rojo un poco más brillante */
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+    .json-container {
+        font-size: 0.75rem;
+    }
+    .table-auditoria {
+        font-size: 0.9rem;
+    }
+}

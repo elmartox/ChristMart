@@ -1,0 +1,110 @@
+@charset "UTF-8";
+
+/* ================================
+   FUENTES Y BASE
+================================ */
+/* Fuentes */
+body {
+    font-family: 'Inter', sans-serif;
+}
+
+/* Paleta */
+:root {
+    --hero-green-top: #0d853f;
+    --hero-green-bottom: #0a5c2d;
+    --footer-red: #cc2f2f;
+}
+
+/* NAVBAR */
+
+.navbar-brand,
+.nav-link {
+    font-family: 'Inter', sans-serif !important;
+    font-weight: 600;
+}
+.nav-link:hover {
+    background-color: rgba(0, 0, 0, 0.06);
+}
+
+.nav-link.active {
+    background-color: #0a5c2d;
+    color: white !important;
+    font-weight: 600;
+}
+
+/* HERO */
+.hero-section {
+    min-height: 90vh;
+    background: linear-gradient(135deg, var(--hero-green-top), var(--hero-green-bottom));
+    padding-top: 120px;        /* espacio para la navbar fija */
+    padding-bottom: 60px;
+    color: white;
+}
+
+.hero-text h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3.5rem;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.hero-text h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.9rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.hero-text .lead {
+    font-size: 1.15rem;
+    margin-bottom: 1.5rem;
+    opacity: 0.95;
+}
+
+/* Modelo 3D */
+.hero-model model-viewer {
+    width: 100%;
+    height: 420px;
+    max-width: 500px;
+    border-radius: 16px;
+    background-color: transparent;
+}
+
+/* ========================================================= */
+/* RESPONSIVE MÓVIL - QUEDA PERFECTO */
+/* ========================================================= */
+@media (max-width: 768px) {
+    .hero-section {
+        padding-top: 100px;     /* menos espacio porque la navbar colapsa */
+        padding-bottom: 50px;
+        text-align: center;
+    }
+
+    .hero-text h1 {
+        font-size: 2.6rem !important;
+    }
+
+    .hero-text h3 {
+        font-size: 1.5rem !important;
+    }
+
+    .hero-text .lead {
+        font-size: 1.1rem;
+    }
+
+    .hero-model model-viewer {
+        height: 300px;          /* más pequeño en móvil */
+        max-width: 380px;
+        margin: 0 auto 30px auto;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-text h1 {
+        font-size: 2.3rem !important;
+    }
+    
+    .hero-model model-viewer {
+        height: 260px;
+    }
+}

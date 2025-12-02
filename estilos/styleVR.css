@@ -1,0 +1,99 @@
+@charset "UTF-8";
+
+
+/* HERO NAVIDEÑO */
+.hero-3d {
+    background: linear-gradient(135deg, #0f4c3a, #1a6b54);
+    padding: 140px 0 80px;
+    text-align: center;
+    color: white;
+}
+
+.hero-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 3.2rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.hero-subtitle {
+    font-size: 1.3rem;
+    opacity: 0.9;
+    font-weight: 400;
+}
+
+/* Sección de Realidad Virtual */
+.vr-section {
+    text-align: center;
+    padding: 40px;
+    background-color: #f8f9fa;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    margin-top: 30px;
+}
+
+.vr-description {
+    font-size: 1.2rem;
+    color: #0f4c3a;
+    margin-bottom: 1rem;
+}
+
+/* A-Frame VR */
+a-scene {
+    width: 100%;
+    height: 500px;
+    margin-bottom: 1.5rem;
+    border-radius: 20px;
+}
+
+/* Navbar de Bootstrap */
+.navbar {
+    background-color: #0f4c3a;
+    padding: 1rem 2rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.navbar-brand {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    color: #fff;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 20px;
+}
+
+.nav-link {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.1rem;
+    color: #fff;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.nav-link:hover {
+    color: #d4a373;
+    background-color: rgba(0, 0, 0, 0.1);
+    padding: 5px 10px;
+    border-radius: 8px;
+}
+
+.nav-link.active {
+    background-color: #0a5c2d;
+    color: white;
+    font-weight: 700;
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+    .hero-title { font-size: 2.5rem; }
+    .vr-description { font-size: 1.1rem; }
+    .vr-section {
+        padding: 20px;
+    }
+}
